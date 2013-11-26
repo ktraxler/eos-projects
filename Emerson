@@ -15,7 +15,7 @@ CORE:
 2. Mount shared windows folder
 3. Modify motion.conf so that it is always running, 2 fps, saves in shared folder
 HALF:
-4. Make stream open to everyone
+4. Make stream open to everyone //hello
 5. Intergrate into a website
 6. tune and make everything pretty
 EXTRA:
