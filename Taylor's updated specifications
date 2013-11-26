@@ -46,8 +46,13 @@ PROGRESS:
 
 So far I have been able to use characters to represent that game. Using an array of a "Tiles" class, 
 I am able to make the walls of rooms and spawn the player to where he/she can walk around and not into the walls. 
-Items have been added but are not functional yet, they simple just spawn and do nothing. Doors appear sometimes on the 
-room you start in, and my next step is to create an algorithm that automatically connects the door to other rooms by 
+The array is a 2D array in order to store each element's x and y coordinates and represents the entire map. A simple rectangle is made by specifying 
+its x and y coordinates and width and height and by using a nested "for" loop, each part of the rectangle is added to the 
+array which is then printed out on to the screen (black background).
+
+Items have been added but are not functional yet, they simply just spawn and do nothing. 
+Doors appear sometimes on the room you start in by randomly generated a number to determine which of the four walls it appears on,
+ allows the player to walk into it, unlike the walls which surround it. My next step is to create an algorithm that automatically connects the door to other rooms by 
 a corridor. A text box will also be added to tell that player what evnts hav occured. 
 
 Specifications template courtesy of: http://www.bradapp.com/docs/sdd.html#TOC_SEC5
