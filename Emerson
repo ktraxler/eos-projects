@@ -1,0 +1,56 @@
+My project is a Raspberry pi based motion activated security camera with a website.
+
+upon activation it will upload "video" of a series of still pictures to a website. (every second? every two?)
+
+I will look into full video streaming but due to the pi's limited proccessing power im worried it 
+wont be able to stream hd videos.
+
+if time allows I would like to add the ability to turn on the camera via the web client.
+
+note, camera interface is already coded for the pi.
+ half way point would be to get the camera detecting motion and taking pictures. 
+ 
+CORE:
+1. Install motion on pi
+2. Mount shared windows folder
+3. Modify motion.conf so that it is always running, 2 fps, saves in shared folder
+HALF:
+4. Make stream open to everyone
+5. Intergrate into a website
+6. tune and make everything pretty
+EXTRA:
+7. Would be nice to get a email or text when it is set off 
+8. see how fast a fps the pi can handle
+9. auto delete once a week to keep the folder clear
+10.option to turn off via shh or something 
+11. always streaming at 1 pic per minute even when no motion.
+
+
+raspberry pi flow chart
+---------------------------------------------------
+\\   Motion detects motion                       //
+\\   begins checks                               //
+---------------------------------------------------
+\\   checks memory -> if still mounted continue  //
+\\                    else exit                  //  
+\\   checks internet -> if conected continue     //
+\\                      else exit                //
+---------------------------------------------------
+\\   take pictures-> stop when no motion is      //
+\\                   detected for 10 seconds     // 
+\\                   or after 10 min.            //
+----------------------------------------------------
+
+desktop flow chart
+----------------------------------------------------
+\\   check time -> if 10 pm continue              //
+\\                 else keep checking             //
+----------------------------------------------------
+\\   use winscp to connect to pi                  //
+----------------------------------------------------
+\\  download folder for the day to desktop        //
+----------------------------------------------------
+\\ verify                                         //
+----------------------------------------------------
+\\ delete folder form pi                          //
+----------------------------------------------------
