@@ -55,4 +55,10 @@ Doors appear sometimes on the room you start in by randomly generated a number t
  allows the player to walk into it, unlike the walls which surround it. My next step is to create an algorithm that automatically connects the door to other rooms by 
 a corridor. A text box will also be added to tell that player what evnts hav occured. 
 
+Progress 2: 
+
+I have been able to make a random amount of rooms that generate with varying widths and heights. This was done by
+creating an array of "cells" that divide up the map. I then use a loop and determine if each cell should contain a room
+or not. If it does, then the rooms width and height will be determined.
+
 Specifications template courtesy of: http://www.bradapp.com/docs/sdd.html#TOC_SEC5
