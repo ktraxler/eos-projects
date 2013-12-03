@@ -1,0 +1,51 @@
+In my project, I am using XCode to create a mobile application to allow the user to add and delete data in a database.  
+This application will be able to communicate with the database so that it may add or delete materials and quantities.
+
+Core objective:
+Learn how to communicate with a database and be able to edit it with a mobile application.  
+
+The thought behind this would be that have a foreman on a job be able to request for materials as he thinks of them by
+just pulling his phone or tablet out and with a few clicks have it shoot over to the warehouse.
+
+Mid-point:
+I would like to have the cosmetics of the application up and linked up correctly to the code.
+
+Also would like to have extensive research on how databases work and how it connects to an IDE like XCode.
+
+Final product:
+Have a fully functional application that can add, delete, and list all data inputs that are in the database.
+
+Have it possible to have the person on the other end edit the database on his/her computer.
+
+Create some more tabs in the application for other features such as time sheets, etc. 
+
+
+My project is constructed with XCode and uses SQLite which is built in the IDE itself to allow great accessibility
+and fluid implementations.  XCode uses a MVC (Model View Controller) development model which allows you to create the 
+view and have the visual tools such as buttons and text fields connected to the code itself.
+
+1. So far I have two text fields and three buttons. Each button acts as an action and is fired whenever the user presses
+it. When pressed, the block of code then executes.
+
+2. The SQLite library that is built into XCode allows me to take the information added into the text fields and when
+the addMaterial button is pressed, it inputs the Material name and quantity number in the database. Similarly,
+the same thing occurs with the delete Material button.  
+
+3. My third button is the list materials button and when pressed, it fires off a block of code that displays the 
+items in the database in a tableView window which is on the bottom of my view. These materials are displayed with 
+the material name and the quantity number as a smaller number under the name string.
+
+4. I will add some other views to the project and have them accessible to the user with tabs at the bottom of the 
+application. These other features will be similar to the request material tab but I will utilize other capabilities 
+that SQLite will let me accomplish.
+
+Progress:
+So far I have created the application in XCode and figured out how to connect and edit information in the SQLite database
+This proved very time consuming to be because I had to learn a lot of objective-C and database uses. These two are
+very new to me so it took a long time to get it all working and communicating. Now that I have the code and database
+connected, I feel like I can accomplish more at a faster pase.
+
+A specific problem that I ran into was just getting started. Luckily there are a ton of resources on the internet that
+had clear, informative tutorials on how this works. The problem I have now is that I can add and delete items from my app
+to the database but I am unable to go the other way. When I add and delete items from the database using a database
+browser, the application becomes thrown off and I have to create a whole new one.
