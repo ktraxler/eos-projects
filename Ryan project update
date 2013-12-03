@@ -1,0 +1,27 @@
+So I'm creating a program that processes transactions and updates the inventory accordingly 
+using a music instrument store as an example. Some details about where I am right now:
+
+1. To give you an idea of how I designed the framework of my program, I made the attached 
+UML diagram to illustrate how each class interacts with the other. If time allows within
+the coming week I plan on adding an on-line shopping component to the program which would 
+expand upon this diagram.
+
+2. Data Structures and Algorithms - I will use linked lists to keep track of the iventory
+and, time allowing, will use a mySQL based virtual server to possibly store sample user-name
+and account information (if on-line componet is added), or billing info if it's an in person
+transaction. I do not know how I will search through these lists yet, but the main idea is to
+keep the program as memory efficient and fast as possible. Because of this I will be using valgrind
+as this project progresses to make sure I'm achieving this goal.
+
+3. GUI - due to time constraints, it will be a command-line interface.
+
+4. Right now - I have every class and Data Structue I need to use defined and coded. I'm still
+   "filling in" those classes pertaining how I want each one to work and I'm still researching 
+  what searching algorithms to use.
+  
+5. Miscellaneous - this program will be writen in C++ using the compiler CodeBlocks for the Ubuntu 
+   distribution of the Linux operating system. Aforementioned mySQL specs will be used if applicable.
+   
+More on purpose - I'm basically picturing this as a prototype iPod/iPad or phone app that is portable,
+efficient, fast, and reliable. I'm also trying to solidify my knowledge of the data structures, searching 
+algorithms, and OOP design concepts I'm currently using as well.
