@@ -57,7 +57,48 @@ digital to audio convertor
 |  ClockDataRetriever clockDataRetriever;   |
 |-------------------------------------------+
 |  int nextBirthNote();                     |
+|  int nextBirthChord();                    |
 |  int nextDeathNote();                     |
-|  void sendOSC(String path, Object[] args);|
+|  int nextDeathChord();                    |
 |  static void main(String[] args);         |
 +-------------------------------------------+
+
++-----------------------------------+
+| MusicaDataParser.java:            |
++-----------------------------------+
+|  static final int[] cMajorScale;  |
+|  static final int[] cMinorScale;  |
+|  static final int SCALE_SIZE;     |
+|  int bCursor;                     |
+|  int dCursor;                     |
++-----------------------------------+
+|  static int nextBirthNote();      |
+|  static int nextDeathNote();      |
++-----------------------------------+
+
+Programming Journal
+
+November 12, 2013:
+
+	I want to do something using OSC (open sound control) so I researched what systems have OSC built-in or have libraries to support it. Some possible options for me are Java, PHP, Python, Pure Data, Ruby, Arduino, and iPhone.
+
+November 17, 2013:
+
+	I’m trying to design something to auralize some data. I’ve chosen to represent the US birth and death rates from http://www.census.gov/popclock/. Java has a JavaOSC library so I will use that to send data. Pure Data is a visual programming language that can easily generate sound and it has OSC built-in. I will use these two systems to send OSC messages between.
+
+November 19, 2013:
+
+	I have a java program started and have figured out how to parse through the JSON data from the census clock website (which was hard enough to find) to extract the birth and death rates per second in the US.
+
+November 25, 2013:
+
+	Although I knew it what Pure Data did. I did not know much about how to use it. I’ve now got a stand-alone Pure Data program that will play any midi note that’s placed in the box at the top of the patch.
+
+December 1, 2013:
+
+	Over the past week I’ve managed to set up a simple loop through the midi notes for an ascending C major scale and a descending C minor scale for births and deaths to play respectively at their respective rates in the java program. I route them with an OSC message with a “/birth” and “/death” path respectively.
+	
+December 10, 2013:
+
+	I updated the java program to send major or minor chords for a user entered number of births or deaths respectively. The pd file was also updated to play single notes instead of held out notes and expanded to handle chords.
+	
