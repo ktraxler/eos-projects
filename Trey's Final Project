@@ -1,0 +1,111 @@
+Introduction
+
+The purpose of this document is to describe my final project for CSC 2700. The scope is total and general. My intended audience is my classmates in CSC 2700. My product is called "URL Parser". 
+
+System Overview
+
+The software system used in this project is the IDE NetBeans and the Java programming language.
+
+General Constraints
+
+There is a general constraint on what constitutes a general URL in the Java programming language.
+
+Word consideration - What constitutes a word for the purposes of this project? A word would have no leading or trailing whitespace. It would also have no middle whitespace and have only [1,20] alphanumeric characters.
+
+Another constraint is navigating through the relative URLs of the given URL. A possible solution would be to look for local or internal html links (aref) in the given URL.
+
+Goals and Guidelines
+
+My goal is a simple program that has two inputs and one output. 
+
+The inputs would be ...
+1) URL address
+2) query word
+
+The program then checks for the occurrence of the word at the URL address.
+
+The output would be ...
+1) true or false value
+2) (relative) URL that contains the word
+
+Architectural Strategies
+
+I used Java because it is the programming language I'm most familiar with and the one taught at LSU.
+
+A possible enhancement of this program would to enable prefix and suffix searches. Also, it would be nice if this program would tell you on what line your target word occurs.
+
+System Architecture
+
+The high level system architecture for this project follows the basic development method of input-process-output.
+
+Subsystem Architecture
+
+I have a word checker to make sure the query word is manageable.
+
+Bibliography
+
+http://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
+
+CODE
+/*
+ * @author Trey Thibodeaux
+ * @date 12/12/13
+ */
+
+import java.io.*;
+import java.net.*;
+
+public class PageSearcher 
+{
+   public static void main(String[] args) throws Exception 
+   {
+      String webAddress = "http://www.xbox.com/en-US";
+      String query = "game";
+      if(!checkWord(query))
+      {
+         System.out.println("Unacceptable word");
+         System.exit(3);
+      }
+      try
+      {         
+         /*
+          * Code adapted from Java Guide to URLs
+          * http://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
+          */
+         URL site = new URL(webAddress);
+         BufferedReader buffIn = new BufferedReader(new InputStreamReader(site.openStream()));
+         
+         String text = "";
+         String line = "";
+         while ((line = buffIn.readLine()) != null)
+            text = text + line;
+         buffIn.close();
+         if(text.contains(query))
+            System.out.println("true");
+         else
+            System.out.println("false");
+         //System.out.println(text);
+      }
+      catch(MalformedURLException m)
+      {
+         System.out.println("MalformedURLException");
+         System.exit(1);
+      }
+      catch(IOException i)
+      {
+         System.out.println("IOException");
+         System.exit(2);
+      }
+   }
+   
+   static boolean checkWord(String word)
+   {
+      int size = word.trim().length();
+      if(0 == size || 20 < size)
+         return false;
+      else for(int i = 0; i < size; i++)
+         if(!Character.isLetterOrDigit(word.charAt(i)))
+            return false;
+      return true;
+   }
+}
