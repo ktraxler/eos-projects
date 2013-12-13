@@ -54,3 +54,62 @@ desktop flow chart
 ----------------------------------------------------
 \\ delete folder form pi                          //
 ----------------------------------------------------
+
+==============JOURNAL======================
+oct 30th:
+    raspberry pi camera arrived today, spent the better part of an hour updating
+	Raspbian to the most current version.  then I had to upgrade the drivers to 
+	interface with the camera. took a few pictures using commands through ssh.
+	
+nov 2ed:
+    camera housing came in today, took way to long to get everything in to it.
+	its a little bit small but I made it fit.
+
+nov 9th:
+    I spent entirely to much time trying to get a windows shared folder to mount on my pi.
+    turns out Hamachi makes it so that the pi cant find my computer through it ip address.
+    after uninstalling Hamachi I managed to get the folder to mount, but upon reboot it 
+	couldn’t find it again, so ive decided to use a flash drive to hold the pictures, 32 gig ordered and on the way.
+
+nov 13th: 
+    flash drive arrived and mounted to the pi. now that the drive is attached the pi no longer fits into its housing, 
+	so I have it taped to a zippo. much less cool.
+
+nov 16th: 
+    started reading up about motion and how it works, learned it has a built in streamer so that’s cool.
+	also learned it doesn’t support the new raspberry pi camera... yeah the one I just bought.  after searching around for a while 
+	there is a guy who has a work around he calls motion_MMAL so im going to figure out how to install that with motion.
+
+nov 30th:
+    forgot to log the 23ed but I got motion installed and I got MMAL downloaded, I have learned to many Linux commands lately.
+	today I finished messing with the motion_MMAL package, once that was installed I started messing with the motion.conf file.
+	I currently have it set for 2 fps 1280X720. its taking pictures and saving them on the flash drive, the stream is working
+	but only when im on the same network(in my house/on my wifi). 
+
+dec 2ed:
+    disaster has struck! my raspberry pi decided a good place to store pictures would be over the operating systems... 
+	how is that even possible. the pi is now a brick and the sd card is completely useless, upon putting it into my computer 
+	is registers as BOOT: and is only 54mb in size, when I formatted it it remained 54mb(its supposed to be 4 gigs).
+	I don’t know what to do about this and all the files on the flash drive are corrupt so I don’t even have any pictures of when it was working.
+	got to love technology...
+	
+dec	3ed:
+    I fixed my SD card this morining in a stroke of genius, I formatted the card in my d7000 then I put it in my laptop and put it back to 
+	fs24 or whatever, I have the operating system loading onto it now.
+
+dec 5th:(am)
+    I have the camera connected and taking pictures, motion is installed and modified to work with MMAL. Unfortunately   the flash drive will 
+	no longer stay mounted. Everything is the same except the power supply, which is just a different phone charger then the one I had
+    (I may have lost the old one).
+	
+dec 5th:(pm)
+    turns out the phone charger that im using now is 1 amp and the old one was a 3 a that I bought beacuse it had enough power to run the pi
+    and external drives. so due to me losing that one I can’t mount a flash drive without it cutting out every time the cpu needs more power.
+    im going to look for the old one, but so far I haven’t had any luck.
+	
+dec 7th:
+    I cant find my old charger and I dont have time or money to buy a powered hub.  with this being the beginning of final week I think im just 
+	going to tap out on this on, I had it working( well other then streaming out side of my network). with more time and a few more parts im sure
+	I could have gotten it back into working order.  over all I have learned a massive amount about how linux works, things like boot order,
+	how external drives are classified and mounted, networking stuff manily pertaining to ip and network names, and a whole heap of commands for 
+	installing moving and opening files.
