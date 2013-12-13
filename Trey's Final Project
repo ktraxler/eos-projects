@@ -1,3 +1,23 @@
+ENGINEERING JOURNAL START
+11/9/13
+   My project is to write a program that does the following operation. If you give it a web address, it can search the entire site, including the site's subpages, to see if that word occurs. What motivated this project was trying to find out how to cancel my membership to Xbox Live on www.xbox.com. At the time I thought it would be great if I had a program that could tell where, if at all, the words "cancel", "end", or "terminate" occur. I think I would also want my program to also indicate what specific URL has the desired term.
+   Since I have the most experience with Java, I would use that as my programming language. I think that a good understanding of how webpages work would be helpful as well as finding the right Java classes that deals with webpages. The Java website has a tutorial on understanding URLS so I think I will start there.
+11/11/13
+   A URL typically consists of two parts: protocol and resource name. The protocol comes first and is followed by a colon and two forward slashes and then the resource name. For instance, the URL http://www.lsu.edu has the protocol http and the resource name www.lsu.edu.
+   The resource name may consist of different parts, some of which must be displayed depending on the protocol. For instance http (Hyptertext Transfer Protocol) requires the name of the machine on which the resource lives and the pathname to the file on that machine. A URL can be thought of as an address to a file on the Internet but this isn't always the case. Besides the hostname and filename, the resource name may be a port number and a reference to a specific location in the file.
+12/1/13
+   The general format of a URL is PROTOCOL://RESOURCE NAME. The resource name is composed of the hostname, filename, port number (default 80 for http), and reference number (#).
+12/2/13
+   In Java URLs are stored as absolutes and relatives. An absolute URL can stand on its own because it has all the information necessary to reach a file on the Internet. A relative URL only has significance in relation to another absolute URL. For example the website http://www.reddit.com/ is an absolute URL, and relative URL based on the absolute URL would just be "r/pics" or "r/funny" because the critical information was already supplied by the absolute URL.
+*** For this project, it would be useful, if, given the main page of a website, I could get all the relative URLs from it.
+   The URL class in Java provides several accessor methods to a URL's components even though the URL may not have all of them. For instance, not all URLs will have a reference tag, but Java lets you ask a URL object for it nonetheless.
+*** URLs with special characters (like spaces) need to be piece-constructed as a URI and delivered as a URL using the toURL() method of the URI class.
+12/4/13
+   The biggest difficulty is not searching for text within a single page; it's searching for a word within a whole website. There is an openStream() method opens a connection to a URL in the Java URL class. You can get text from that single webpage and search it, but it'd be better if you could search all webpages within a site.
+   One problem is that whenever Java opens a connection to a webpage, it doesn't care whether or not that page is useful to the user. For instance the websites http://www.xbox.com/ and http://www.xbox.com/aklj are treated the same when being created in Java.
+ENGINEERING JOURNAL END
+
+DESIGN SPECIFICATIONS START
 Introduction
 
 The purpose of this document is to describe my final project for CSC 2700. The scope is total and general. My intended audience is my classmates in CSC 2700. My product is called "URL Parser". 
@@ -45,8 +65,9 @@ I have a word checker to make sure the query word is manageable.
 Bibliography
 
 http://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
+DESIGN SPECIFICATIONS END
 
-CODE
+CODE START
 /*
  * @author Trey Thibodeaux
  * @date 12/12/13
@@ -109,3 +130,4 @@ public class PageSearcher
       return true;
    }
 }
+CODE END
