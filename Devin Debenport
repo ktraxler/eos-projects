@@ -1,0 +1,33 @@
+The goal of my program was to build a simple GUI over another program that reads the metadata of an mp3 file.
+
+The program would take the metadata that it has found and display the song title, the album title, and the artist to the user. Then the user would have the option to search a website that indexes the Usenet.
+
+My midpoint goal was to have some basic functionality of the program, such as reading mp3 files and displaying them in the GUI
+
+My final goal was to, of course, have the program fully functional.
+
+
+
+In the original development, I planned to use Java. I had no clue how to build a GUI originally, so I needed to find some way to do that. Another situation I faced was finding a way to read the metadata of the MP3 files, and yet another was how I was going to actually get the program to search a website after I had all the information.
+                          
+                          
+JOURNAL:
+
+11/17: I originally planned to actually implement a Usenet indexing program but I realized that it would take a lot of time and would be really hard considering the lack of open source indexing programs, so I scratched that idea. I noticed that one of the websites used for indexing uses the search terms in the URLS, so I decided to use that.
+
+11/20: Found that, for building the GUI, Netbeans actually includes an interface to build swing objects. I learned that swing is a part of javax, a class library in the JDK.
+
+11/21: Found a third party library that I could use to read the MP3 files. I had a hard time getting it to actually work, as first I didn't even know how to import libraries. Once I had built the classes and actually got it imported, the MP3s still weren't being read properly. Upon further inspection of the developer's github, it turs out that I had to use a program called Maven to build the library. Once I had, everything was reading smoothly.
+
+12/1: I designed a simple flow path that I would use for the program. I already have a simple GUI built at this point.
+http://i.imgur.com/W4ZpWf8.jpg <---flow that I would use
+
+12/3: I didn't know how to do use the swing jtree, so I read a few tutorials on how to get it to look at a directory.
+
+12/4 Updated the design of the GUI, at this stage it looked much closer to the final product.
+http://i.imgur.com/6xydXSs.jpg
+
+12/10 Ran into some trouble with getting the browser to open. I tried using the Desktop class to open the default browser. Some component in it could not actually consider URLs with spaces in them as valid, so I had to replace all of the spaces in the URLs as they are sent to the browser with + s. This made everything work nicely. 
+
+12/11 This point, everything is working nicely. I decided to actually add in some extra functionality, like a "search google" button and another button to select a directory. This design is actually the closest to the final product. After I added these buttons, I changed a couple things around but the product was done.
+http://i.imgur.com/ruMfCXO.jpg
